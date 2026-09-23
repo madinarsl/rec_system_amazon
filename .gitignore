@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# duck_db
+*.wal
+*.tmp/
+
+# heavy data
+data/*.parquet
+data/*.jsonl.gz
