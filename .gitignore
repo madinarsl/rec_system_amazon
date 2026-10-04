@@ -226,3 +226,5 @@ data/*.parquet
 data/*.jsonl.gz
 data/artifacts/*.pkl
 data/artifacts/*.npz
+data/artifacts/*.parquet
+models/*.npz
