@@ -25,3 +25,19 @@ def parse_categories(x):
         except (ValueError, SyntaxError):
             return []
     return []
+
+def extract_author_name(x):
+    """clean author name from dict"""
+    if pd.isna(x):
+        return "unknown"
+    if isinstance(x, dict):
+        if 'name' in x:
+            name = x['name']
+            return name if name else 'unknown'
+    if isinstance(x, str):
+        try:
+            parsed = ast.literal_eval(x)
+            return extract_author_name(parsed)
+        except (ValueError, SyntaxError):
+            return x.strip() or "unknown"
+    return "unknown"
